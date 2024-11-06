@@ -1,14 +1,20 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
-const ThemeContext = createContext('dark');
+const ThemeContext = createContext('light');
 
 export const ThemeProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
-            return (
-                localStorage.getItem('theme') === 'dark' ||
-                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
-            );
+            if (localStorage.getItem('theme')) {
+                return (localStorage.getItem('theme') === 'dark')
+            } else {
+               if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                   localStorage.setItem('theme', 'dark')
+                   return true
+               }
+                localStorage.setItem('theme', 'light')
+                return false
+            }
         }
         return false;
     });
