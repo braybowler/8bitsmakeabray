@@ -4,7 +4,7 @@ import HeaderBar from "./components/HeaderBar.tsx";
 function App() {
   return (
       <BrowserRouter>
-          <div className="min-h-screen flex flex-col bg-white">
+          <div className="p-4 min-h-screen flex flex-col bg-white">
               <HeaderBar/>
               <Routes>
               </Routes>
