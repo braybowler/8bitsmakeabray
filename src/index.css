@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-pixelated {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(16, end) forwards, blink 0.5s step-end infinite alternate;
+    border-right: 2px solid #32CD32;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 23%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
