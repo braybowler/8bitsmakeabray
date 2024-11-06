@@ -11,13 +11,13 @@
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typing 2s steps(16, end) forwards, blink 0.5s step-end infinite alternate;
-    border-right: 2px solid #32CD32;
+    animation: typing 1s steps(16, end) forwards, blink .75s step-end infinite alternate;
+    border-right: 2px solid rgb(250 204 21);
 }
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 23.8%; }
+    to { width: 16ch; }
 }
 
 @keyframes blink {
