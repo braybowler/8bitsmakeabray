@@ -3,11 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .text-pixelated {
     font-family: 'Press Start 2P', cursive;
 }
 
-.typing-effect {
+.title-typing-effect {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
