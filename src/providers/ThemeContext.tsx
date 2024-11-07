@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import Toast from '../components/Toast';
 
 const ThemeContext = createContext('light');
 
@@ -19,12 +20,39 @@ export const ThemeProvider = ({ children }) => {
         return false;
     });
 
+    const [transitionClass, setTransitionClass] = useState('')
+    const [showToast, setShowToast] = useState(false);
+    const [toastMessage, setToastMessage] = useState('')
+    const lightModeMessages = [
+        'Rise from the depths of the Dark',
+        'Darkness be purged by Light',
+        'The Light of the Citadel washes away all Darkness'
+    ]
+    const darkModeMessages = [
+        'Darkness consumes',
+        'The grasp of Darkness is unyielding',
+        'Decay... Destruction... Darkness'
+    ]
+
+    const messageRandomizer = () => {
+        const max = isDarkMode ? darkModeMessages.length : lightModeMessages.length
+        return Math.floor(Math.random() * max)
+    }
+
     const toggleDarkMode = () => {
         const newMode = !isDarkMode;
         setIsDarkMode(newMode);
         if (typeof window !== 'undefined') {
             localStorage.setItem('theme', newMode ? 'dark' : 'light')
         }
+        setTransitionClass(newMode ? 'dark-wave' : 'light-wave')
+
+        const messageIndex = messageRandomizer()
+
+        setToastMessage(newMode ? darkModeMessages[messageIndex] : lightModeMessages[messageIndex])
+        setShowToast(true)
+        setTimeout(() => setTransitionClass(''), 1000);
+        setTimeout(() => setShowToast(false), 3000);
     };
 
     useEffect(() => {
@@ -34,8 +62,10 @@ export const ThemeProvider = ({ children }) => {
     }, [isDarkMode]);
 
     return (
-        <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+        <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode}}>
+            <div className={`transition-overlay ${transitionClass}`}></div>
             {children}
+            {showToast && <Toast message={toastMessage} onClose={() => setShowToast(false)} />}
         </ThemeContext.Provider>
     )
 }
