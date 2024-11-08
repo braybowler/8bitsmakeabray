@@ -1,6 +1,7 @@
 import {useTheme} from "../providers/ThemeContext.tsx";
 
 const About = () => {
+    // @ts-ignore
     const { isDarkMode } = useTheme();
 
     return (

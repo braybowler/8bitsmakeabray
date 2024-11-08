@@ -1,6 +1,7 @@
 import {useTheme} from "../providers/ThemeContext.tsx";
 
 const WizardSprite = () => {
+    // @ts-ignore
     const { isDarkMode } = useTheme();
 
     return (

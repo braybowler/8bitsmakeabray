@@ -1,6 +1,5 @@
 import Introduction from "./Introduction.tsx";
 import WizardSprite from "../components/WizardSprite.tsx"
-import About from "./About.tsx";
 
 const Home = () => {
     return (

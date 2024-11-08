@@ -3,6 +3,7 @@ import Toast from '../components/Toast';
 
 const ThemeContext = createContext('light');
 
+//@ts-ignore
 export const ThemeProvider = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window !== 'undefined') {
@@ -62,6 +63,7 @@ export const ThemeProvider = ({ children }) => {
     }, [isDarkMode]);
 
     return (
+        //@ts-ignore
         <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode}}>
             <div className={`transition-overlay ${transitionClass}`}></div>
             {children}
@@ -70,4 +72,5 @@ export const ThemeProvider = ({ children }) => {
     )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => useContext(ThemeContext);

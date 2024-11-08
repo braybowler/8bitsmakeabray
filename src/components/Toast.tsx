@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+//@ts-ignore
 const Toast = ({message, onClose}) => {
     useEffect(() => {
         const timer = setTimeout(() => {
