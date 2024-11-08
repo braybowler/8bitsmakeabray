@@ -9,15 +9,8 @@ const About = () => {
                 <p>
                     {
                         isDarkMode ?
-                        "You... wanderer... you approach the Dark Necropolis. Tread carefully, for shadows linger here." :
-                        "Ah, a noble soul! Step forth into the Citadel of Light. Here, knowledge gleams as bright as the sun."
-                    }
-                </p>
-                <p>
-                    {
-                        isDarkMode ?
-                            "I am Verithras, servant of the Dark Necropolis. Overlord Brayden has other duties. He has commanded me to ensure lost souls do not stray." :
-                            "I'm Aurexis, guardian of the Citadel of Light. In his absence, High Lord Brayden has entrusted me to guide all who seek wisdom here. May your journey be enlightening."
+                            ("The Overlord") :
+                            ("The Highlord ")
                     }
                 </p>
             </div>
