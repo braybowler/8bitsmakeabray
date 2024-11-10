@@ -25,14 +25,16 @@ export const ThemeProvider = ({ children }) => {
     const [showToast, setShowToast] = useState(false);
     const [toastMessage, setToastMessage] = useState('')
     const lightModeMessages = [
-        'Rise from the depths of the Dark',
+        'Rise from the depths of Darkness',
         'Darkness be purged by Light',
-        'The Light of the Citadel washes away all Darkness'
+        'The Light of the Citadel washes away all Darkness',
+        'May the warmth of light embrace you',
     ]
     const darkModeMessages = [
         'Darkness consumes',
         'The grasp of Darkness is unyielding',
-        'Decay... Destruction... Darkness'
+        'Decay... Destruction... Darkness',
+        'The Light fades',
     ]
 
     const messageRandomizer = () => {

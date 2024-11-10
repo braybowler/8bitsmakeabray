@@ -22,6 +22,7 @@ const Introduction = () => {
                             ("Here, knowledge gleams as bright as the sun.")
                     }
                 </p>
+                <br/>
                 <p>
                     {
                         isDarkMode ?
