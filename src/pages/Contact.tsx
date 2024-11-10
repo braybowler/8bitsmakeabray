@@ -10,8 +10,16 @@ const Contact = () => {
                 <p>
                     {
                         isDarkMode ?
-                            ("Contact") :
-                            ("Contact")
+                            ("You would seek audience with the Overlord? Your hubris knows no bounds.") :
+                            ("The High Lord is gracious to those who seek an audience.")
+                    }
+                </p>
+            <br/>
+                <p>
+                    {
+                        isDarkMode ?
+                            ("If you are convinced that your life is forfeit, then attempt this summoning ritual:") :
+                            ("In the Citadel, court is held frequently. In fact, your invitation has just arrived:")
                     }
                 </p>
             </div>
