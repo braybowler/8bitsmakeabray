@@ -6,7 +6,9 @@ const Toast = ({message, onClose}) => {
     const toastRef = useRef(null);
 
     useEffect(() => {
+        //@ts-ignore
         function handleClickOutside(event) {
+            //@ts-ignore
             if (toastRef.current && !toastRef.current.contains(event.target)) {
                 onClose();
             }
