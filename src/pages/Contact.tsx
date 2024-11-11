@@ -36,9 +36,9 @@ const Contact = () => {
                 <br/>
                 <div className="flex justify-center">
                     <a
-                        className="flex hover:scale-[1.01]"
+                        className="flex sm:hover:scale-[1.05] p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg"
                         href={`mailto:${email}`}>
-                        braybowler1995@gmail.com
+                        Email me
                     </a>
                 </div>
                 <br/>

@@ -117,3 +117,74 @@ body {
     align-items: center;
     z-index: 45;
 }
+
+/* Frame styling */
+.frame {
+    display: flex;
+    max-width: 325px;
+    max-height: 375px;
+    padding: 16px; /* Space between image and frame border */
+    background-color: #b8860b; /* Frame background color */
+    border: 8px solid #8b7500; /* Outer border */
+    box-shadow: 4px 4px 0 #5a4500, -4px -4px 0 #d2b48c, inset 4px 4px 0 #daa520; /* Shadow for 3D pixel effect */
+    position: relative;
+    font-family: 'Press Start 2P', cursive; /* Optional pixel font */
+}
+
+/* Frame corner styling */
+.frame::before, .frame::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #8b7500; /* Darker frame corners */
+}
+
+.frame::before {
+    top: -8px;
+    left: -8px;
+    border-top: 8px solid #daa520;
+    border-left: 8px solid #daa520;
+}
+
+.frame::after {
+    bottom: -8px;
+    right: -8px;
+    border-bottom: 8px solid #5a4500;
+    border-right: 8px solid #5a4500;
+}
+
+.frame-dark {
+    display: flex;
+    max-width: 325px;
+    max-height: 375px;
+    padding: 16px; /* Space between image and frame border */
+    background-color: #3B3B3B; /* Frame background color */
+    border: 8px solid #262626; /* Outer border */
+    box-shadow: 4px 4px 0 #1A1A1A, -4px -4px 0 #595959, inset 4px 4px 0 #1A1A1A; /* Shadow for 3D pixel effect */
+    position: relative;
+    font-family: 'Press Start 2P', cursive; /* Optional pixel font */
+}
+
+/* Frame corner styling */
+.frame-dark::before, .frame-dark::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #1A1A1A; /* Darker frame corners */
+}
+
+.frame-dark::before {
+    top: -8px;
+    left: -8px;
+    border-top: 8px solid #595959;
+    border-left: 8px solid #595959;
+}
+
+.frame-dark::after {
+    bottom: -8px;
+    right: -8px;
+    border-bottom: 8px solid #595959;
+    border-right: 8px solid #595959;
+}
