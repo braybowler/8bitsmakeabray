@@ -21,7 +21,7 @@ const About = () => {
                         {
                             isDarkMode ?
                                 ("Do not let the warmth and whimsy of this hanged picture fool you. The Overlord is capable of wearing whatever guise necessary - though he does seem fond of this particular look, especially when tending to Earthly matters.") :
-                                ("The Highlord ")
+                                ("Ahh, yes - The High Lord - in all his Earthly glory. He often contains the true splendor of his full might by way of this vessel.")
                         }
                     </p>
                 </div>
@@ -29,22 +29,22 @@ const About = () => {
                     <p>
                         {
                             isDarkMode ?
-                                ("When not not required to assert his authority over the Necropolis, the Overlord practices the mystical arts of 'software engineering'.") :
-                                ("The Highlord ")
+                                ("When not required to assert his authority over the Necropolis, the Overlord dissects the various sorceries of the realms. Last of which he made mention of are the enigmatic arts of 'software engineering'. I believe it to be closely related to necromancy - allowing our Overlord to animate the machine spirits to serve his will.") :
+                                ("In a continued show of humility, the High Lord learns skills from the various realms. His most recent endeavour seems particularly interesting. The inhabitants of the realm he picked it from call it 'software engineering' but, more plainly, it appears to be a branch of magic that allows communication with, and command of, machines.")
                         }
                     </p>
                     <p>
                         {
                             isDarkMode ?
-                                ("Moreover, the Overlord is fond of a most nefarious means of self-torture known as 'golf'.") :
-                                ("The Highlord ")
+                                ("") :
+                                ("")
                         }
                     </p>
                     <p>
                         {
                             isDarkMode ?
-                                ("Finally, the Overlord consistently looks to grow his physical prowess. I've advised him time after time that a simple spell could hoist the heavy objects, but he insists on doing it himself.") :
-                                ("The Highlord ")
+                                ("") :
+                                ("")
                         }
                     </p>
                 </div>
