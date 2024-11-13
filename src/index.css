@@ -8,23 +8,29 @@
     url('./assets/fonts/PressStart2P-Regular.ttf')
 }
 
+html {
+    -webkit-font-smoothing: antialiased
+}
+
 .text-pixelated {
     font-family: 'PressStart2P', cursive;
 }
 
-.title-typing-effect {
+.title-typing-effect h1 {
     overflow: hidden;
     white-space: nowrap;
     width: 0;
-    animation: typing 1s steps(14, end) forwards, blink .75s step-end infinite alternate;
+    animation:
+            typing 1s steps(14, end) forwards,
+            blink-caret .75s step-end infinite alternate;
 }
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 14ch; }
+    to { width: 100%; }
 }
 
-@keyframes blink {
+@keyframes blink-caret {
     50% { border-color: transparent; }
 }
 
