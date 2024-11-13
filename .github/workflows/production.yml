@@ -31,7 +31,7 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_PATH: ${{ secrets.SERVER_PATH }}
         run: |
-          printf "%s" "$SSH_PRIVATE_KEY" > ssh_key
+          echo -e "$SSH_PRIVATE_KEY" > ssh_key
           chmod 600 ssh_key
 
           #Debugging
