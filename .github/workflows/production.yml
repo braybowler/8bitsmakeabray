@@ -31,7 +31,7 @@ jobs:
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_PATH: ${{ secrets.SERVER_PATH }}
         run: |
-          echo "$SSH_PRIVATE_KEY" > ssh_key
+          printf "%s" "$SSH_PRIVATE_KEY" > ssh_key
           chmod 600 ssh_key
 
           # Create the .ssh directory and set permissions
@@ -41,6 +41,6 @@ jobs:
           # Add server to known_hosts to avoid host verification prompt
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
 
-          scp -i ssh_key -r ./dist/* $SERVER_USER@$SERVER_IP:$SERVER_PATH
+          scp -i ssh_key -o StrictHostKeyChecking=no -r ./dist/* $SERVER_USER@$SERVER_IP:$SERVER_PATH
           
           rm ssh_key        
