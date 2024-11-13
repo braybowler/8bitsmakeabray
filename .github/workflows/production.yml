@@ -1,0 +1,46 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: 
+     - production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '23'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy files to server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PATH: ${{ secrets.SERVER_PATH }}
+        run: |
+          echo -e "$SSH_PRIVATE_KEY" > ssh_key
+          chmod 600 ssh_key
+
+          # Create the .ssh directory and set permissions
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Add server to known_hosts to avoid host verification prompt
+          ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+
+          scp -i ssh_key -o StrictHostKeyChecking=no -r ./dist/* $SERVER_USER@$SERVER_IP:$SERVER_PATH
+          
+          rm ssh_key        
