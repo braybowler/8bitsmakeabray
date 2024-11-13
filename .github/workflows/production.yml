@@ -34,12 +34,18 @@ jobs:
           printf "%s" "$SSH_PRIVATE_KEY" > ssh_key
           chmod 600 ssh_key
 
+          #Debugging
+          ssh-keygen -l -f ssh_key || echo "Key loading error."
+
           # Create the .ssh directory and set permissions
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
           # Add server to known_hosts to avoid host verification prompt
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+
+          # Attempt SSH connection test to diagnose issues (debugging)
+          ssh -i ssh_key -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'" || echo "SSH connection failed."
 
           scp -i ssh_key -o StrictHostKeyChecking=no -r ./dist/* $SERVER_USER@$SERVER_IP:$SERVER_PATH
           
