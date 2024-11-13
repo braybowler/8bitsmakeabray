@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import HamburgerMenu from '../assets/svgs/HamburgerMenu.tsx';
+import HamburgerMenu from './HamburgerMenu.tsx';
 
 const NavLinks = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
