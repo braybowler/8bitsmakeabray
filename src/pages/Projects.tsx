@@ -14,6 +14,13 @@ const Projects = () => {
                             ("Projects")
                     }
                 </p>
+                <p>
+                    {
+                        isDarkMode ?
+                            ("Checkout my GitHub") :
+                            ("Checkout my GitHub")
+                    }
+                </p>
             </div>
         </div>
     );

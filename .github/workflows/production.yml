@@ -41,9 +41,6 @@ jobs:
           # Add server to known_hosts to avoid host verification prompt
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
 
-          # Ensure target directory exists
-          ssh -i ssh_key -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "mkdir -p $SERVER_PATH"
-
           scp -i ssh_key -o StrictHostKeyChecking=no -r ./dist/* $SERVER_USER@$SERVER_IP:$SERVER_PATH
           
           rm ssh_key        
