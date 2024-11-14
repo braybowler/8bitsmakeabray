@@ -134,6 +134,7 @@ body {
     display: flex;
     max-width: 325px;
     max-height: 375px;
+    margin: 0px auto;
     padding: 16px; /* Space between image and frame border */
     background-color: #b8860b; /* Frame background color */
     border: 8px solid #8b7500; /* Outer border */
@@ -169,6 +170,7 @@ body {
     display: flex;
     max-width: 325px;
     max-height: 375px;
+    margin: 0px auto;
     padding: 16px; /* Space between image and frame border */
     background-color: #3B3B3B; /* Frame background color */
     border: 8px solid #262626; /* Outer border */
