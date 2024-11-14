@@ -6,7 +6,7 @@ const About = () => {
 
     return (
         <div
-            className="p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg w-full bg-slate-50 dark:bg-black ">
+            className="overflow-auto max-h-[375px] p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg w-full bg-slate-50 dark:bg-black ">
             <div
                 className="flex justify-center mb-2 font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">
                 Overlord Brayden
