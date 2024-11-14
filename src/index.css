@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .overflow-auto::-webkit-scrollbar {
+        @apply w-1 m-1
+    }
+    .overflow-auto::-webkit-scrollbar-track {
+        @apply w-1
+    }
+    .overflow-auto::-webkit-scrollbar-thumb {
+        @apply bg-gradient-to-b from-transparent dark:via-orange-400 via-cyan-400 to-transparent
+    }
+}
+
 @font-face {
     font-family: 'PressStart2P';
     src:local("PressStart2P-Regular"),
