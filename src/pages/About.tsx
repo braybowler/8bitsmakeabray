@@ -1,5 +1,4 @@
 import {useTheme} from "../providers/ThemeContext.tsx";
-import {useEffect} from "react";
 
 const About = () => {
     // @ts-ignore
