@@ -1,7 +1,7 @@
 import Introduction from "./Introduction.tsx";
 import WizardSprite from "../components/WizardSprite.tsx"
 import About from "./About.tsx";
-import Projects from "./Projects.tsx";
+import Projects from "./Projects/Projects.tsx";
 import Contact from "./Contact.tsx";
 import Headshot from "../components/Headshot.tsx";
 
