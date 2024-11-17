@@ -8,6 +8,7 @@ type Repo = {
     html_url: string;
     homepage: string | null;
     description: string | null;
+    topics: Array<string>;
 }
 
 const ProjectsList: React.FC = () => {
@@ -75,6 +76,19 @@ const ProjectsList: React.FC = () => {
                                 {
                                     repo.description &&
                                     <p>{repo.description}</p>
+                                }
+                                {
+                                    repo.topics &&
+                                    <>
+                                        <p>Developing {repo.name} allowed me to explore: </p>
+                                        <ul>
+                                            {repo.topics.map((topic) => (
+                                                <li>
+                                                    <span>{topic}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
                                 }
                                 <p>
                                     Check out the code for:
