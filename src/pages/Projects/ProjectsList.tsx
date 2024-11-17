@@ -45,47 +45,54 @@ const ProjectsList: React.FC = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <div>
-            <h2 className="flex justify-center font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">My Projects</h2>
+        <div
+            className="max-h-[375px] p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg w-full bg-slate-50 dark:bg-black"
+        >
+            <h2
+                className="flex justify-center font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg"
+            >
+                My Projects
+            </h2>
             <div className="flex items-center w-full mt-2 mb-2">
-                <div
-                    className="flex-grow h-[2px] bg-gradient-to-r from-transparent dark:via-orange-400 via-cyan-400 to-transparent"/>
+                <div className="flex-grow h-[2px] bg-gradient-to-r from-transparent dark:via-orange-400 via-cyan-400 to-transparent"/>
             </div>
-            <ul>
-                {filteredRepos.map((repo) => (
-                    <li key={repo.id}>
-                        <div className="m-2">
-                            {
-                                repo.homepage &&
-                                <a
-                                    className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg"
-                                    href={repo.homepage}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {repo.homepage}
-                                </a>
-                            }
-                            {
-                                repo.description &&
-                                <p>{repo.description}</p>
-                            }
-                            <div className="flex flex-row">
-                                <p>Check out the code for: </p>
-                                <a
-                                    className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg ml-3 mr-3"
-                                    href={repo.html_url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {repo.name}
-                                </a>
-                                <p> on Github.</p>
+            <div className="overflow-y-auto max-h-[300px]">
+                <ul className="flex flex-col font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">
+                    {filteredRepos.map((repo) => (
+                        <li key={repo.id}>
+                            <div className="m-2">
+                                {
+                                    repo.homepage &&
+                                    <a
+                                        className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg"
+                                        href={repo.homepage}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {repo.homepage}
+                                    </a>
+                                }
+                                {
+                                    repo.description &&
+                                    <p>{repo.description}</p>
+                                }
+                                <p>
+                                    Check out the code for:
+                                    <a
+                                        className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg ml-3 mr-3"
+                                          href={repo.html_url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                    >
+                                        {repo.name}
+                                    </a>
+                                    on Github.
+                                </p>
                             </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };

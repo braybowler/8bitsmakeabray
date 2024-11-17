@@ -37,7 +37,7 @@ const Home = () => {
                     className="flex-grow h-[2px] bg-gradient-to-r from-transparent dark:via-orange-400 via-cyan-400 to-transparent"/>
             </div>
             <section id="contact" className="flex flex-row w-full justify-center align-middle">
-                <div className="relative flex flex-col md:flex-row gap-4">
+                <div className="relative flex flex-col md:flex-row">
                     <Contact></Contact>
                 </div>
             </section>

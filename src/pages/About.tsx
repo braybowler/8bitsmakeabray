@@ -6,15 +6,17 @@ const About = () => {
 
     return (
         <div
-            className="max-h-[375px] p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg w-full bg-slate-50 dark:bg-black ">
-            <div
-                className="flex justify-center font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">
+            className="max-h-[375px] p-2 sm:p-4 border-2 border-purple-400 dark:border-green-400 rounded-xl shadow-lg w-full bg-slate-50 dark:bg-black"
+        >
+            <h2
+                className="flex justify-center font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg"
+            >
                 Overlord Brayden
-            </div>
+            </h2>
             <div className="flex items-center w-full mt-2 mb-2">
                 <div className="flex-grow h-[2px] bg-gradient-to-r from-transparent dark:via-orange-400 via-cyan-400 to-transparent"/>
             </div>
-            <div id="scrollableContainer" className="overflow-auto max-h-[300px]">
+            <div className="overflow-y-auto max-h-[300px]">
                 <div className="flex flex-col font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">
                     <div>
                         <p>

@@ -10,7 +10,7 @@ const NavLinks = () => {
     return (
         <div className="relative">
             <nav className="hidden lg:flex space-x-2 sm:space-x-4">
-                <HashLink smooth to="/#about" className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg">//About</HashLink>
+                <HashLink smooth to="/#about" className="w">//About</HashLink>
                 <HashLink smooth to="/#projects" className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg">//Projects</HashLink>
                 <HashLink smooth to="/#contact" className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg">//Contact</HashLink>
             </nav>
