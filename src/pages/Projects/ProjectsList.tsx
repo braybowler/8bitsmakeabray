@@ -1,4 +1,3 @@
-import {useTheme} from "../../providers/ThemeContext.tsx";
 import {useEffect, useState} from "react";
 import axios from 'axios';
 
@@ -6,15 +5,12 @@ type Repo = {
     id: number;
     name: string;
     html_url: string;
-    homepage: string | null;
+    homepage: string | undefined;
     description: string | null;
     topics: Array<string>;
 }
 
 const ProjectsList: React.FC = () => {
-    // @ts-ignore
-    const { isDarkMode } = useTheme();
-
     const [repos, setRepos] = useState<Repo[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string|null>(null);
@@ -59,18 +55,21 @@ const ProjectsList: React.FC = () => {
             </div>
             <div className="overflow-y-auto max-h-[300px]">
                 <ul className="flex flex-col font-press-start text-purple-400 dark:text-green-400 text-xs sm:text-lg">
-                    {filteredRepos.map((repo) => (
+                    {filteredRepos.map((repo, index) => {
+                        const homepageDomain = repo.homepage ? new URL(repo.homepage).hostname : null;
+
+                        return (
                         <li key={repo.id}>
-                            <div className="m-2">
+                            <div>
                                 {
-                                    repo.homepage &&
+                                    homepageDomain &&
                                     <a
                                         className="text-purple-400 dark:text-green-400 hover:text-cyan-400 dark:hover:text-orange-400 font-press-start text-xs sm:text-lg"
                                         href={repo.homepage}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {repo.homepage}
+                                        {homepageDomain}
                                     </a>
                                 }
                                 {
@@ -81,10 +80,10 @@ const ProjectsList: React.FC = () => {
                                     repo.topics &&
                                     <>
                                         <p>Developing {repo.name} allowed me to explore: </p>
-                                        <ul>
+                                        <ul className="grid grid-cols-2 sm:grid-cols-3 justify-items-center gap-1 my-1 sm:my-2">
                                             {repo.topics.map((topic) => (
-                                                <li>
-                                                    <span>{topic}</span>
+                                                <li className="flex">
+                                                    <span className="p-1 sm:p-2 border border-purple-400 dark:border-green-400 rounded-full bg-slate-200 dark:bg-slate-600">{topic}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -103,8 +102,16 @@ const ProjectsList: React.FC = () => {
                                     on Github.
                                 </p>
                             </div>
+                            {
+                                index < filteredRepos.length - 1 &&
+                                <div className="flex items-center w-full mt-2 mb-2">
+                                    <div
+                                        className="flex-grow h-[2px] bg-gradient-to-r from-transparent dark:via-orange-400 via-cyan-400 to-transparent"/>
+                                </div>
+                            }
                         </li>
-                    ))}
+                        )
+                    })}
                 </ul>
             </div>
         </div>
